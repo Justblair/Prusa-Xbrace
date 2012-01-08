@@ -12,6 +12,16 @@
 
 // translate([0,0,16]) crossbrace_base();
 
+//side_cross_left();
+//side_cross_right();
+//side_cover_left();
+//translate([-45,0,0]) side_cover_right();
+
+translate([0,38,14]) rotate([180,0,0]) crossbrace_top() ;
+
+
+translate([0,0,7]) rotate([180,0,0]) crossbrace_bracket();
+
 // Modules
 // ****************************************************************************
 
@@ -55,68 +65,86 @@ difference(){
 }  // end module
 
 module side_cross_left() {
-translate([0,0,14+12]) rotate([0,180,0]) difference(){
-    linear_extrude(file="xbrace_side.dxf", height = 14+12, origin =[0,0]);
-
-    rotate([90,90,0]) cylinder(r=3.95, h=60, center=true);
-    translate([0,0,4+4])  rotate([-45,90,0]) cylinder(r=4.1, h=60, center=true);
-    translate([0,0,4+4+8])  rotate([0,90,0]) cylinder(r=4.1, h=60, center=true);
-translate([-10.606602,10.606602,0]) cylinder(r = 2, h = 80, center= true);
-translate([10.606602,-10.606602,0]) cylinder(r = 2, h = 80, center= true);
-    }
-}//
-
+// ****************************************************************************
+	translate([0,0,14+12]) 
+	rotate([0,180,0]) 
+		difference(){
+			linear_extrude(file="xbrace_side.dxf", height = 14+12, origin =[0,0]);
+			rotate([90,90,0]) 
+				cylinder(r=3.95, h=60, center=true);
+			translate([0,0,4+4])  
+			rotate([-45,90,0]) 
+				cylinder(r=4.1, h=60, center=true);
+			translate([0,0,4+4+8])  
+			rotate([0,90,0]) 
+				cylinder(r=4.1, h=60, center=true);
+			translate([-10.606602,10.606602,0]) 
+				cylinder(r = 2, h = 80, center= true);
+			translate([10.606602,-10.606602,0]) 
+				cylinder(r = 2, h = 80, center= true);
+		} // end difference
+} // end module
 
 module side_cross_right() {
-translate([-45,0,14+12]) rotate([0,180,0]) difference(){
-    linear_extrude(file="xbrace_side.dxf", height = 14+12, origin =[0,0]);
-
-    rotate([90,90,0]) cylinder(r=3.95, h=60, center=true);
-    translate([0,0,4+4])  rotate([45,90,0]) cylinder(r=4.1, h=60, center=true);
-    translate([0,0,4+4+8])  rotate([0,90,0]) cylinder(r=4.1, h=60, center=true);
-translate([-10.606602,-10.606602,0]) cylinder(r = 2, h = 80, center= true);
-translate([10.606602,10.606602,0]) cylinder(r = 2, h = 80, center= true);
-
-    }
-}//
-
+// ****************************************************************************
+	translate([-45,0,14+12]) 
+	rotate([0,180,0]) 
+		difference(){
+			linear_extrude(file="xbrace_side.dxf", height = 14+12, origin =[0,0]);
+			rotate([90,90,0]) 
+				cylinder(r=3.95, h=60, center=true);
+			translate([0,0,4+4])  
+			rotate([45,90,0]) 
+				cylinder(r=4.1, h=60, center=true);
+			translate([0,0,4+4+8])  
+			rotate([0,90,0]) 
+				cylinder(r=4.1, h=60, center=true);
+			translate([-10.606602,-10.606602,0]) 
+				cylinder(r = 2, h = 80, center= true);
+			translate([10.606602,10.606602,0]) 
+				cylinder(r = 2, h = 80, center= true);
+		} // end difference
+}// end module
 
 module side_cover_right() {
-translate([0,45,8]) rotate([0,180,0]) difference(){
-    linear_extrude(file="xbrace_side.dxf", height = 8, origin =[0,0]);
-translate([10.606602,10.606602,0]) cylinder(r = 2, h = 80, center= true);
-translate([-10.606602,-10.606602,0]) cylinder(r = 2, h = 80, center= true);
-    rotate([90,90,0]) cylinder(r=3.95, h=60, center=true
-);
-    }
-}//
+// ****************************************************************************
+	translate([0,45,8]) 
+	rotate([0,180,0]) 
+		difference(){
+			linear_extrude(file="xbrace_side.dxf", height = 8, origin =[0,0]);
+			translate([10.606602,10.606602,0]) 
+				cylinder(r = 2, h = 80, center= true);
+			translate([-10.606602,-10.606602,0]) 
+				cylinder(r = 2, h = 80, center= true);
+			rotate([90,90,0]) 
+				cylinder(r=3.95, h=60, center=true);
+		} // end difference
+}// end module
 
 module side_cover_left() {
-translate([0,45,8]) rotate([0,180,0]) difference(){
-    linear_extrude(file="xbrace_side.dxf", height = 8, origin =[0,0]);
-translate([-10.606602,10.606602,0]) cylinder(r = 2, h = 80, center= true);
-translate([10.606602,-10.606602,0]) cylinder(r = 2, h = 80, center= true);
-    rotate([90,90,0]) cylinder(r=3.95, h=60, center=true);
-    }
-}//
+// ****************************************************************************
+	translate([0,45,8]) 
+	rotate([0,180,0]) 
+		difference(){
+			linear_extrude(file="xbrace_side.dxf", height = 8, origin =[0,0]);
+			translate([-10.606602,10.606602,0]) 
+				cylinder(r = 2, h = 80, center= true);
+			translate([10.606602,-10.606602,0]) 
+				cylinder(r = 2, h = 80, center= true);
+			rotate([90,90,0]) 
+				cylinder(r=3.95, h=60, center=true);
+		} // end difference
+}// end module
 
-//side_cross_left();
-//side_cross_right();
-//side_cover_left();
-//translate([-45,0,0]) side_cover_right();
-
-translate([0,38,14]) rotate([180,0,0]) crossbrace_top() ;
-
-
-translate([0,0,7]) rotate([180,0,0]) crossbrace_bracket();
 
 module crossbrace_bracket() {
-
-difference(){
- 	linear_extrude(file="xbrace_brac.dxf", height = 7, origin =[0,0]);
- rotate([0,90,0]) cylinder(r=3.96, h=100, center=true);
-}
-} ///
+// ****************************************************************************
+	difference(){
+	linear_extrude(file="xbrace_brac.dxf", height = 7, origin =[0,0]);
+	rotate([0,90,0]) 
+		cylinder(r=3.96, h=100, center=true);
+	} // end difference
+} // end module
 
 
 
